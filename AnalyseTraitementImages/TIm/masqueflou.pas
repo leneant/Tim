@@ -1,0 +1,120 @@
+unit MasqueFlou;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, Global, Convolution_Red, MemoryPix, ProgressWindows, constantes, Luminance,
+  marqueurs, forms, TSL, math;
+
+procedure MasqueFlou_ApplyMasqueFlou(var ImgSrc, ImgDest : TMemoryPix; sigma, k : real;
+  t_rouge, t_jaune, t_vert, t_cyan, t_bleu, t_magenta, t_mono : boolean ;
+  _apcolor, _progress : boolean);
+
+
+implementation
+
+var
+  // Flou - init
+  _init1  : TConvMatriceRed = (
+                            (001,001,001,001,001),
+                            (001,001,001,001,001),
+                            (001,001,001,001,001),
+                            (001,001,001,001,001),
+                            (001,001,001,001,001));
+
+  // Flou - utilisé
+  _Used  : TConvMatriceRed ;
+
+  procedure initMatrice(sigma : real);
+  var i,j : integer;
+    coef : real;
+    eloignement : integer;
+  begin
+    for i := -2 to 2 do begin
+      for j := -2 to 2 do begin
+        // Plus sigma est élevé et plus le flou est important => Que moins le point central
+        // est important et plus les points autours sont importants
+        // Inversement sigma faible, le point central est le plus important
+        // 0 => Importance au point central
+        // 2 => Importance aux points périphériques
+        // 1- Calcul de l'éloigement au point central 0 = Point central, 1 = point autour du point central, 2 = point périphérique
+        eloignement := max(abs(j),abs(i));
+        // Calcul du ceof d'ajustement
+        coef := 5 - (sigma*eloignement);
+        _Used[i,j]:=trunc(_init1[i,j]*coef*1000);
+      end;
+    end;
+  end;
+
+  procedure MasqueFlou_ApplyMasqueFlou(var ImgSrc, ImgDest : TMemoryPix; sigma, k : real;
+    t_rouge, t_jaune, t_vert, t_cyan, t_bleu, t_magenta, t_mono : boolean ;
+    _apcolor, _progress : boolean);
+  var
+    x,y,x1,y1, _width, _height : integer;
+    _R, _G, _B, _R1, _G1, _B1 : Byte;
+    _Rs, _Gs, _Bs, _Ri, _Gi, _Bi : real;
+    _Luminance : real;
+    _calc : boolean;
+    _teinte : integer;
+  begin
+    // Init recup taille image source et init taille image dest
+    ImgSrc.getImageSize(_width,_height);
+    ImgDest.Init(_width,_height,false);
+    // Init valeur de la matrice de convolution
+    initMatrice(sigma);
+    MatConvRed.initValeurs(_Used);
+    for x := 0 to _width - 1 do begin
+      for y := 0 to _height - 1 do begin
+        // Calcul du pixel du masque flou
+        ImgSrc.getPixel(x,y,_R,_G,_B);
+        x1 := x;
+        y1 := y;
+        _R1 := _R;
+        _G1 := _G;
+        _B1 := _B;
+        // Détermination de la luminance et s'il faut ou non faire les calculs
+        _luminance := GetLuminance (_R,_G,_B);
+        // Détermination de la teinte pour s'avoir s'il faut ou non faire les calculs
+        _teinte := TSL_getTeinteIndex(_R,_G,_B);
+        _calc := (((_luminance < _CTonsSombres) and _ATonsSombres) or
+                 ((_luminance < _CTonsMoyens) and _ATonsMoyens and (_luminance >= _CTonsSombres)) or
+                 ((_luminance >= _CTonsMoyens) and _ATonsClairs))
+                 and
+                 ((t_rouge   and (_teinte = 1)) or
+                  (t_jaune   and (_teinte = 2)) or
+                  (t_vert    and (_teinte = 3)) or
+                  (t_cyan    and (_teinte = 4)) or
+                  (t_bleu    and (_teinte = 5)) or
+                  (t_magenta and (_teinte = 6)) or
+                  (t_mono    and (_teinte = 7)));
+        if _calc then begin
+          MatConvRed.pixelApply(ImgSrc, _R,_G,_B, _Rs,_Gs, _Bs, x,y, _apcolor);
+          // Calcul du pixel de l'image intermédiaire (originale - image floue)
+          _Ri := _R1 - _Rs ;//(_Rs * sigma);
+          _Gi := _G1 - _Gs ;//(_Gs * sigma);
+          _Bi := _B1 - _Bs; //(_Bs * sigma);
+
+          // Addition (moyenne) entre la source et le pixel de l'image intermédiaire
+          _Rs := (_R1 + _Ri * k) ;//+ (sigma) ; // diviseur;
+          _Gs := (_G1 + _Gi * k) ;//+ (sigma) ; // diviseur;
+          _Bs := (_B1 + _Bi * k) ;//+ (sigma) ; // diviseur;
+
+        end else begin
+          _Rs := _R;
+          _Gs := _G;
+          _Bs := _B;
+        end;
+        if _Rs < 0 then _Rs := 0 else if _Rs > 255 then _Rs := 255;
+        if _Gs < 0 then _Gs := 0 else if _Gs > 255 then _Gs := 255;
+        if _Bs < 0 then _Bs := 0 else if _Bs > 255 then _Bs := 255;
+        ImgDest.setPixel(x1,y1,Byte(round(_Rs)),Byte(round(_Gs)),Byte(round(_Bs)));
+      end;
+      if (x mod c_refresh = 0) and _progress then ProgressWindow.SetProgressInc(x/(_width-1)*_Prog_Calc) else
+        if (x mod c_refresh) = 0 then Application.ProcessMessages;
+    end;
+  end;
+
+end.
+

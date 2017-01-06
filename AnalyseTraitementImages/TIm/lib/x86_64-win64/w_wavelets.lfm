@@ -1,0 +1,276 @@
+object W_Wavelets: TW_Wavelets
+  Left = 725
+  Height = 447
+  Top = 71
+  Width = 351
+  Caption = 'Wavelets'
+  ClientHeight = 447
+  ClientWidth = 351
+  Constraints.MaxWidth = 351
+  Constraints.MinWidth = 351
+  LCLVersion = '1.0.14.0'
+  object Shape45: TShape
+    Left = 24
+    Height = 40
+    Top = 208
+    Width = 259
+    Brush.Color = 12096304
+  end
+  object Shape44: TShape
+    Left = 24
+    Height = 40
+    Top = 160
+    Width = 259
+    Brush.Color = 12096304
+  end
+  object imgsrc: TImage
+    Cursor = crSizeAll
+    Left = 24
+    Height = 121
+    Top = 8
+    Width = 121
+    Center = True
+    Proportional = True
+    Stretch = True
+  end
+  object SB_V: TScrollBar
+    Left = 184
+    Height = 122
+    Top = 9
+    Width = 20
+    Kind = sbVertical
+    LargeChange = 30
+    PageSize = 0
+    TabOrder = 0
+  end
+  object imgfocus: TImage
+    Left = 208
+    Height = 121
+    Top = 9
+    Width = 121
+    Center = True
+  end
+  object SB_H: TScrollBar
+    Left = 208
+    Height = 18
+    Top = 128
+    Width = 123
+    LargeChange = 30
+    PageSize = 0
+    TabOrder = 1
+  end
+  object TB_a: TTrackBar
+    Left = 32
+    Height = 24
+    Hint = 'Plage inférieure 1 (fréquence les plus basses)'
+    Top = 164
+    Width = 247
+    Frequency = 500
+    Max = 10000
+    Position = 1000
+    TickMarks = tmTopLeft
+    OnKeyDown = TB_aKeyDown
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 2
+  end
+  object Label1: TLabel
+    Left = 8
+    Height = 16
+    Top = 176
+    Width = 7
+    Caption = 'a'
+    Font.Height = -12
+    ParentColor = False
+    ParentFont = False
+  end
+  object EDT_a: TEdit
+    Left = 296
+    Height = 23
+    Top = 169
+    Width = 45
+    Alignment = taCenter
+    Enabled = False
+    Font.Height = -12
+    ParentFont = False
+    TabOrder = 3
+    Text = '1.000'
+  end
+  object TB_b: TTrackBar
+    Left = 32
+    Height = 24
+    Hint = 'plage inférieure 2'
+    Top = 212
+    Width = 247
+    Frequency = 500
+    Max = 10000
+    Position = 1000
+    TickMarks = tmTopLeft
+    OnKeyDown = TB_bKeyDown
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 4
+  end
+  object Label2: TLabel
+    Left = 8
+    Height = 16
+    Top = 224
+    Width = 8
+    Caption = 'b'
+    Font.Height = -12
+    ParentColor = False
+    ParentFont = False
+  end
+  object EDT_b: TEdit
+    Left = 296
+    Height = 23
+    Top = 217
+    Width = 45
+    Alignment = taCenter
+    Enabled = False
+    Font.Height = -12
+    ParentFont = False
+    TabOrder = 5
+    Text = '1.000'
+  end
+  object Button1: TButton
+    Left = 8
+    Height = 26
+    Top = 408
+    Width = 96
+    Caption = 'Appliquer'
+    TabOrder = 6
+  end
+  object Shape46: TShape
+    Left = 24
+    Height = 40
+    Top = 304
+    Width = 259
+    Brush.Color = 12096304
+  end
+  object Shape47: TShape
+    Left = 24
+    Height = 40
+    Top = 256
+    Width = 259
+    Brush.Color = 12096304
+  end
+  object TB_c: TTrackBar
+    Left = 32
+    Height = 24
+    Hint = 'Plage moyennes (fréquences moyennes)'
+    Top = 260
+    Width = 247
+    Frequency = 500
+    Max = 10000
+    Position = 1000
+    TickMarks = tmTopLeft
+    OnKeyDown = TB_cKeyDown
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 7
+  end
+  object Label3: TLabel
+    Left = 8
+    Height = 16
+    Top = 272
+    Width = 7
+    Caption = 'c'
+    Font.Height = -12
+    ParentColor = False
+    ParentFont = False
+  end
+  object EDT_c: TEdit
+    Left = 296
+    Height = 23
+    Top = 265
+    Width = 45
+    Alignment = taCenter
+    Enabled = False
+    Font.Height = -12
+    ParentFont = False
+    TabOrder = 8
+    Text = '1.000'
+  end
+  object TB_d: TTrackBar
+    Left = 32
+    Height = 24
+    Hint = 'Fréquences hautes'
+    Top = 308
+    Width = 247
+    Frequency = 500
+    Max = 10000
+    Position = 1000
+    TickMarks = tmTopLeft
+    OnKeyDown = TB_dKeyDown
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 9
+  end
+  object Label4: TLabel
+    Left = 8
+    Height = 16
+    Top = 320
+    Width = 8
+    Caption = 'd'
+    Font.Height = -12
+    ParentColor = False
+    ParentFont = False
+  end
+  object EDT_d: TEdit
+    Left = 296
+    Height = 23
+    Top = 312
+    Width = 45
+    Alignment = taCenter
+    Enabled = False
+    Font.Height = -12
+    ParentFont = False
+    TabOrder = 10
+    Text = '1.000'
+  end
+  object Shape48: TShape
+    Left = 24
+    Height = 40
+    Top = 352
+    Width = 259
+    Brush.Color = 12096304
+  end
+  object TB_e: TTrackBar
+    Left = 32
+    Height = 24
+    Hint = 'Fréquences les plus élevées (bruit)'
+    Top = 356
+    Width = 247
+    Frequency = 500
+    Max = 10000
+    Position = 1000
+    TickMarks = tmTopLeft
+    OnKeyDown = TB_eKeyDown
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 11
+  end
+  object Label5: TLabel
+    Left = 8
+    Height = 16
+    Top = 368
+    Width = 7
+    Caption = 'e'
+    Font.Height = -12
+    ParentColor = False
+    ParentFont = False
+  end
+  object EDT_e: TEdit
+    Left = 296
+    Height = 23
+    Top = 361
+    Width = 45
+    Alignment = taCenter
+    Enabled = False
+    Font.Height = -12
+    ParentFont = False
+    TabOrder = 12
+    Text = '1.000'
+  end
+end

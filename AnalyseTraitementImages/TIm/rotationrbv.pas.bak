@@ -1,0 +1,286 @@
+unit RotationRBV;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
+  Unit3, ProgressWindows,RVB,
+  Prev, Global, MemoryPix, w_source, Diary, marqueurs, types, saveenv, constantes;
+
+type
+
+  { TForm2 }
+
+  TForm2 = class(TForm)
+    Button1: TButton;
+    Button2: TButton;
+    CheckBox1: TCheckBox;
+    Label1: TLabel;
+    Label10: TLabel;
+    Label11: TLabel;
+    Label12: TLabel;
+    Label13: TLabel;
+    Label14: TLabel;
+    Label15: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    Label8: TLabel;
+    Label9: TLabel;
+    RadioButton1: TRadioButton;
+    RadioButton2: TRadioButton;
+    RadioButton3: TRadioButton;
+    RadioButton4: TRadioButton;
+    RadioButton5: TRadioButton;
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure CheckBox1Change(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
+    procedure FormChangeBounds(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure FormHide(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure RadioButton1Change(Sender: TObject);
+    procedure RadioButton2Change(Sender: TObject);
+    procedure RadioButton3Change(Sender: TObject);
+    procedure RadioButton4Change(Sender: TObject);
+    procedure RadioButton5Change(Sender: TObject);
+    procedure setEnabled(en : boolean);
+  private
+    { private declarations }
+    const _code = 19;
+  public
+    { public declarations }
+    procedure Init;
+  end;
+
+var
+  Form2: TForm2;
+
+implementation
+
+{$R *.lfm}
+
+{ TForm2 }
+
+var _action : integer;
+    askRedraw, _neg : boolean;
+
+procedure drawRGBRot;
+begin
+  if not isTransaction then begin
+    isTransaction := true ;
+    while askRedraw do begin
+      askRedraw := false;
+      RotateRVB (_lumprev, _calculatedpix, W_Prev.Preview, _action, _neg, false);
+    end;
+    isTransaction := false;
+  end;
+end;
+
+procedure TForm2.Init;
+begin
+  askRedraw := false;
+  form2.enabled := false;
+  RadioButton1.Checked := false ;
+  RadioButton2.Checked := false ;
+  RadioButton3.Checked := false ;
+  RadioButton4.Checked := false ;
+  RadioButton5.Checked := false ;
+  CheckBox1.Checked := false;
+  _action := 0;
+  _neg := false;
+  form2.enabled := true;
+end;
+
+procedure TForm2.FormChangeBounds(Sender: TObject);
+begin
+  if _env_maj then exit;
+  _G_Win_Conf._fenetre[self._code].x := self.Left;
+  _G_Win_Conf._fenetre[self._code].y := self.Top;
+  _G_Win_Conf._fenetre[self._code]._width := self.Width;
+  _G_Win_Conf._fenetre[self._code]._height := self.Height;
+end;
+
+procedure TForm2.setEnabled(en : boolean);
+begin
+  RadioButton1.enabled := en ;
+  RadioButton2.enabled := en ;
+  RadioButton3.enabled := en ;
+  RadioButton4.enabled := en ;
+  RadioButton5.enabled := en ;
+  Label1.enabled := en;
+  Label2.enabled := en;
+  Label3.Enabled := en;
+  Label4.enabled := en;
+  label5.enabled := en;
+  label6.enabled := en;
+  label7.enabled := en;
+  label8.enabled := en;
+  label9.enabled := en;
+  label10.enabled := en;
+  label11.enabled := en;
+  label12.enabled := en;
+  label13.enabled := en;
+  label14.enabled := en;
+  label15.enabled := en;
+  CheckBox1.enabled := en;
+  Button2.enabled := en;
+  Button1.enabled := en;
+end;
+
+procedure TForm2.CheckBox1Change(Sender: TObject);
+begin
+  form2.enabled := false;
+  _neg := CheckBox1.Checked;
+  askRedraw := true;
+  drawRGBrot ;
+  form2.enabled := true;
+end;
+
+procedure TForm2.FormActivate(Sender: TObject);
+begin
+  if not form3.IsVisible then begin
+    if not _S_Canceled then begin
+      Screen.Cursor := crHourGlass ;
+
+      form2.enabled := false;
+      setEnabled(false);
+      _action := 0;
+      _neg := false;
+      preparePreview(W_SRC.View, W_Prev.Preview);
+      // Transformation en TMemoryPix
+      if _islumprev then begin
+        _lumprev.Clear;
+        _islumprev := false;
+      end;
+      _lumprev.Init(W_Prev.Preview);
+      _islumprev := true;
+      form2.enabled := true;
+      setEnabled(true);
+      Screen.Cursor := crDefault ;
+    end else setEnabled(true);
+  end;
+end;
+
+procedure TForm2.Button1Click(Sender: TObject);
+begin
+  form2.enabled := false;
+  RadioButton1.Checked := false ;
+  RadioButton2.Checked := false ;
+  RadioButton3.Checked := false ;
+  RadioButton4.Checked := false ;
+  RadioButton5.Checked := false ;
+  CheckBox1.Checked := false;
+  _action := 0;
+  _neg := false;
+  askRedraw := true;
+  drawRGBrot ;
+  form2.enabled := true;
+end;
+
+procedure TForm2.Button2Click(Sender: TObject);
+var _txt : string;
+    x, y : integer;
+begin
+  isTransaction := true;
+  _event := true;
+  Form2.Enabled := false;
+  setEnabled(false);
+  Form3.Show;
+  Form3.Enabled := false;
+  ProgressWindow.ShowWindow('Traitements...', 'Rotation des couleurs RVB');
+  Screen.Cursor := crHourGlass ;
+  _finalpix.getImageSize(x,y);
+  _calculatedpix.Init(x,y,false);
+  RotateRVB (_finalpix, _calculatedpix, Form3.imgres, _action, _neg, true);
+  ProgressWindow.SetProgress('Réglages appliqués', 100);
+  Form3.Refresh;
+  str (_action, _txt);
+  init_param(_params);
+  _param := new_param('Rotation couleurs n°', _txt);
+  add_param(_params, _param);
+  if _neg then
+    _param := new_param('Négatif', 'Oui')
+  else
+    _param := new_param('Négatif', 'Non') ;
+  add_param(_params, _param);
+  _command := new_command('Rotation des canaux couleurs RVB', _params);
+  isTransaction := true;
+  ProgressWindow.HideWindow;
+  isTransaction := false;
+  Form2.Enabled := true;
+  Form3.Enabled := true;
+  Screen.Cursor := crDefault;
+  _event := false;
+  Form3.setFocus;
+end;
+
+procedure TForm2.FormCreate(Sender: TObject);
+begin
+
+end;
+
+procedure TForm2.FormHide(Sender: TObject);
+begin
+  _currentWin := nil;
+end;
+
+procedure TForm2.FormShow(Sender: TObject);
+begin
+  _action := 0;
+  _neg := false;
+end;
+
+procedure TForm2.RadioButton1Change(Sender: TObject);
+begin
+  form2.enabled := false;
+  _action := 1;
+  askRedraw := true;
+  drawRGBrot ;
+  form2.enabled := true;
+end;
+
+procedure TForm2.RadioButton2Change(Sender: TObject);
+begin
+  form2.enabled := false;
+  _action := 2;
+  askRedraw := true;
+  drawRGBrot ;
+  form2.enabled := true;
+end;
+
+procedure TForm2.RadioButton3Change(Sender: TObject);
+begin
+  form2.enabled := false;
+  _action := 3;
+  askRedraw := true;
+  drawRGBrot ;
+  form2.enabled := true;
+end;
+
+procedure TForm2.RadioButton4Change(Sender: TObject);
+begin
+  form2.enabled := false;
+  _action := 4;
+  askRedraw := true;
+  drawRGBrot ;
+  form2.enabled := true;
+end;
+
+procedure TForm2.RadioButton5Change(Sender: TObject);
+begin
+  form2.enabled := false;
+  _action := 5;
+  askRedraw := true;
+  drawRGBrot ;
+  form2.enabled := true;
+end;
+
+end.
+

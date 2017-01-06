@@ -1,0 +1,1088 @@
+object W_Configuration: TW_Configuration
+  Left = 342
+  Height = 422
+  Top = 0
+  Width = 641
+  BorderIcons = [biSystemMenu, biMinimize]
+  Caption = 'Configuration'
+  ClientHeight = 422
+  ClientWidth = 641
+  Color = 7368816
+  Constraints.MaxHeight = 422
+  Constraints.MaxWidth = 641
+  Constraints.MinHeight = 422
+  Constraints.MinWidth = 641
+  OnChangeBounds = FormChangeBounds
+  LCLVersion = '1.6.0.4'
+  object GroupBox1: TGroupBox
+    Left = 13
+    Height = 377
+    Top = 8
+    Width = 615
+    Caption = 'Résolution de la prévisualisation'
+    ClientHeight = 361
+    ClientWidth = 613
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqCleartype
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 0
+    OnClick = GroupBox1Click
+    object Label1: TLabel
+      Left = 313
+      Height = 12
+      Top = 0
+      Width = 42
+      Caption = '470x470'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -11
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqCleartype
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label2: TLabel
+      Left = 361
+      Height = 12
+      Top = 0
+      Width = 42
+      Caption = '580x580'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -11
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqCleartype
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label3: TLabel
+      Left = 409
+      Height = 12
+      Top = 0
+      Width = 42
+      Caption = '690x690'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -11
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqCleartype
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label4: TLabel
+      Left = 457
+      Height = 12
+      Top = 0
+      Width = 42
+      Caption = '800x800'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -11
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqCleartype
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label5: TLabel
+      Left = 505
+      Height = 12
+      Top = 0
+      Width = 42
+      Caption = '920x920'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -11
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqCleartype
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label6: TLabel
+      Left = 553
+      Height = 12
+      Top = 0
+      Width = 54
+      Caption = '1024x1024'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -11
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqCleartype
+      ParentColor = False
+      ParentFont = False
+    end
+    object Panel1: TPanel
+      Left = 9
+      Height = 20
+      Hint = 'Définition de la résolution pour la preview (niveau de puissance requis 3/6)'
+      Top = 24
+      Width = 591
+      ClientHeight = 20
+      ClientWidth = 591
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 0
+      object Label7: TLabel
+        Left = 5
+        Height = 15
+        Top = 3
+        Width = 71
+        Caption = 'Luminance'
+        ParentColor = False
+      end
+      object RB_1_1: TRadioButton
+        Left = 318
+        Height = 23
+        Top = 0
+        Width = 23
+        OnChange = RB_1_1Change
+        TabOrder = 1
+      end
+      object RB_1_2: TRadioButton
+        Left = 369
+        Height = 23
+        Top = 0
+        Width = 23
+        Checked = True
+        OnChange = RB_1_2Change
+        TabOrder = 0
+        TabStop = True
+      end
+      object RB_1_3: TRadioButton
+        Left = 416
+        Height = 23
+        Top = 0
+        Width = 23
+        OnChange = RB_1_3Change
+        TabOrder = 2
+      end
+      object RB_1_4: TRadioButton
+        Left = 462
+        Height = 23
+        Top = 0
+        Width = 23
+        OnChange = RB_1_4Change
+        TabOrder = 3
+      end
+      object RB_1_5: TRadioButton
+        Left = 512
+        Height = 23
+        Top = 0
+        Width = 23
+        OnChange = RB_1_5Change
+        TabOrder = 4
+      end
+      object RB_1_6: TRadioButton
+        Left = 558
+        Height = 23
+        Top = 0
+        Width = 23
+        OnChange = RB_1_6Change
+        TabOrder = 5
+      end
+    end
+    object Panel2: TPanel
+      Left = 9
+      Height = 20
+      Hint = 'Définition de la résolution pour la preview (niveau de puissance requis 1/6)'
+      Top = 48
+      Width = 591
+      ClientHeight = 20
+      ClientWidth = 591
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 1
+      object Label8: TLabel
+        Left = 5
+        Height = 15
+        Top = 3
+        Width = 104
+        Caption = 'Contraste global'
+        ParentColor = False
+      end
+      object RB_2_1: TRadioButton
+        Left = 318
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_2_1Change
+        TabOrder = 0
+      end
+      object RB_2_2: TRadioButton
+        Left = 369
+        Height = 23
+        Top = 1
+        Width = 23
+        Checked = True
+        OnChange = RB_2_2Change
+        TabOrder = 1
+        TabStop = True
+      end
+      object RB_2_3: TRadioButton
+        Left = 416
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_2_3Change
+        TabOrder = 2
+      end
+      object RB_2_4: TRadioButton
+        Left = 462
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_2_4Change
+        TabOrder = 3
+      end
+      object RB_2_5: TRadioButton
+        Left = 512
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_2_5Change
+        TabOrder = 4
+      end
+      object RB_2_6: TRadioButton
+        Left = 558
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_2_6Change
+        TabOrder = 5
+      end
+    end
+    object Panel3: TPanel
+      Left = 9
+      Height = 20
+      Hint = 'Définition de la résolution pour la preview (niveau de puissance requis 2/6)'
+      Top = 72
+      Width = 591
+      ClientHeight = 20
+      ClientWidth = 591
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 2
+      object Label9: TLabel
+        Left = 5
+        Height = 15
+        Top = 3
+        Width = 267
+        Caption = 'Réglage de la saturation de chaque teinte'
+        ParentColor = False
+      end
+      object RB_3_1: TRadioButton
+        Left = 318
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_3_1Change
+        TabOrder = 0
+      end
+      object RB_3_2: TRadioButton
+        Left = 369
+        Height = 23
+        Top = 1
+        Width = 23
+        Checked = True
+        OnChange = RB_3_2Change
+        TabOrder = 1
+        TabStop = True
+      end
+      object RB_3_3: TRadioButton
+        Left = 416
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_3_3Change
+        TabOrder = 2
+      end
+      object RB_3_4: TRadioButton
+        Left = 462
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_3_4Change
+        TabOrder = 3
+      end
+      object RB_3_5: TRadioButton
+        Left = 512
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_3_5Change
+        TabOrder = 4
+      end
+      object RB_3_6: TRadioButton
+        Left = 558
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_3_6Change
+        TabOrder = 5
+      end
+    end
+    object Panel4: TPanel
+      Left = 9
+      Height = 20
+      Hint = 'Définition de la résolution pour la preview (niveau de puissance requis 3/6)'
+      Top = 96
+      Width = 591
+      ClientHeight = 20
+      ClientWidth = 591
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 3
+      object Label10: TLabel
+        Left = 5
+        Height = 15
+        Top = 3
+        Width = 200
+        Caption = 'Réglage global de la saturation'
+        ParentColor = False
+      end
+      object RB_4_1: TRadioButton
+        Left = 318
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_4_1Change
+        TabOrder = 0
+      end
+      object RB_4_2: TRadioButton
+        Left = 369
+        Height = 23
+        Top = 1
+        Width = 23
+        Checked = True
+        OnChange = RB_4_2Change
+        TabOrder = 1
+        TabStop = True
+      end
+      object RB_4_3: TRadioButton
+        Left = 416
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_4_3Change
+        TabOrder = 2
+      end
+      object RB_4_4: TRadioButton
+        Left = 462
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_4_4Change
+        TabOrder = 3
+      end
+      object RB_4_5: TRadioButton
+        Left = 512
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_4_5Change
+        TabOrder = 4
+      end
+      object RB_4_6: TRadioButton
+        Left = 558
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_4_6Change
+        TabOrder = 5
+      end
+    end
+    object Panel5: TPanel
+      Left = 9
+      Height = 20
+      Hint = 'Définition de la résolution pour la preview (niveau de puissance requis 1/6)'
+      Top = 120
+      Width = 591
+      ClientHeight = 20
+      ClientWidth = 591
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 4
+      object Label11: TLabel
+        Left = 5
+        Height = 15
+        Top = 3
+        Width = 165
+        Caption = 'Température des couleurs'
+        ParentColor = False
+      end
+      object RB_5_1: TRadioButton
+        Left = 318
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_5_1Change
+        TabOrder = 0
+      end
+      object RB_5_2: TRadioButton
+        Left = 369
+        Height = 23
+        Top = 1
+        Width = 23
+        Checked = True
+        OnChange = RB_5_2Change
+        TabOrder = 1
+        TabStop = True
+      end
+      object RB_5_3: TRadioButton
+        Left = 416
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_5_3Change
+        TabOrder = 2
+      end
+      object RB_5_4: TRadioButton
+        Left = 462
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_5_4Change
+        TabOrder = 3
+      end
+      object RB_5_5: TRadioButton
+        Left = 512
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_5_5Change
+        TabOrder = 4
+      end
+      object RB_5_6: TRadioButton
+        Left = 558
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_5_6Change
+        TabOrder = 5
+      end
+    end
+    object Panel6: TPanel
+      Left = 9
+      Height = 20
+      Hint = 'Définition de la résolution pour la preview (niveau de puissance requis 2/6)'
+      Top = 144
+      Width = 591
+      ClientHeight = 20
+      ClientWidth = 591
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 5
+      object Label12: TLabel
+        Left = 5
+        Height = 15
+        Top = 3
+        Width = 209
+        Caption = 'Ajout/Suppression signal couleur'
+        ParentColor = False
+      end
+      object RB_6_1: TRadioButton
+        Left = 318
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_6_1Change
+        TabOrder = 0
+      end
+      object RB_6_2: TRadioButton
+        Left = 369
+        Height = 23
+        Top = 1
+        Width = 23
+        Checked = True
+        OnChange = RB_6_2Change
+        TabOrder = 1
+        TabStop = True
+      end
+      object RB_6_3: TRadioButton
+        Left = 416
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_6_3Change
+        TabOrder = 2
+      end
+      object RB_6_4: TRadioButton
+        Left = 462
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_6_4Change
+        TabOrder = 3
+      end
+      object RB_6_5: TRadioButton
+        Left = 512
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_6_5Change
+        TabOrder = 4
+      end
+      object RB_6_6: TRadioButton
+        Left = 558
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_6_6Change
+        TabOrder = 5
+      end
+    end
+    object Panel7: TPanel
+      Left = 9
+      Height = 20
+      Hint = 'Définition de la résolution pour la preview (niveau de puissance requis 5/6)'
+      Top = 168
+      Width = 591
+      ClientHeight = 20
+      ClientWidth = 591
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 6
+      OnClick = Panel7Click
+      object Label13: TLabel
+        Left = 5
+        Height = 15
+        Top = 3
+        Width = 131
+        Caption = 'Filtre de convolution'
+        ParentColor = False
+      end
+      object RB_7_1: TRadioButton
+        Left = 318
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_7_1Change
+        TabOrder = 0
+      end
+      object RB_7_2: TRadioButton
+        Left = 369
+        Height = 23
+        Top = 1
+        Width = 23
+        Checked = True
+        OnChange = RB_7_2Change
+        TabOrder = 1
+        TabStop = True
+      end
+      object RB_7_3: TRadioButton
+        Left = 416
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_7_3Change
+        TabOrder = 2
+      end
+      object RB_7_4: TRadioButton
+        Left = 462
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_7_4Change
+        TabOrder = 3
+      end
+      object RB_7_5: TRadioButton
+        Left = 512
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_7_5Change
+        TabOrder = 4
+      end
+      object RB_7_6: TRadioButton
+        Left = 558
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_7_6Change
+        TabOrder = 5
+      end
+    end
+    object Panel8: TPanel
+      Left = 9
+      Height = 20
+      Hint = 'Définition de la résolution pour la preview (niveau de puissance requis 4/6)'
+      Top = 192
+      Width = 591
+      ClientHeight = 20
+      ClientWidth = 591
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 7
+      object Label14: TLabel
+        Left = 5
+        Height = 15
+        Top = 3
+        Width = 77
+        Caption = 'Masque flou'
+        ParentColor = False
+      end
+      object RB_8_1: TRadioButton
+        Left = 318
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_8_1Change
+        TabOrder = 0
+      end
+      object RB_8_2: TRadioButton
+        Left = 369
+        Height = 23
+        Top = 1
+        Width = 23
+        Checked = True
+        OnChange = RB_8_2Change
+        TabOrder = 1
+        TabStop = True
+      end
+      object RB_8_3: TRadioButton
+        Left = 416
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_8_3Change
+        TabOrder = 2
+      end
+      object RB_8_4: TRadioButton
+        Left = 462
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_8_4Change
+        TabOrder = 3
+      end
+      object RB_8_5: TRadioButton
+        Left = 512
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_8_5Change
+        TabOrder = 4
+      end
+      object RB_8_6: TRadioButton
+        Left = 558
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_8_6Change
+        TabOrder = 5
+      end
+    end
+    object Panel9: TPanel
+      Left = 9
+      Height = 20
+      Hint = 'Définition de la résolution pour la preview (niveau de puissance requis 6/6)'
+      Top = 216
+      Width = 591
+      ClientHeight = 20
+      ClientWidth = 591
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 8
+      object Label15: TLabel
+        Left = 5
+        Height = 15
+        Top = 3
+        Width = 348
+        Caption = 'Wavelets - Amélioration de l''image - réduction du bruit'
+        ParentColor = False
+        ParentShowHint = False
+      end
+      object RB_9_1: TRadioButton
+        Left = 318
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_9_1Change
+        TabOrder = 0
+      end
+      object RB_9_2: TRadioButton
+        Left = 369
+        Height = 23
+        Top = 1
+        Width = 23
+        Checked = True
+        OnChange = RB_9_2Change
+        TabOrder = 1
+        TabStop = True
+      end
+      object RB_9_3: TRadioButton
+        Left = 416
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_9_3Change
+        TabOrder = 2
+      end
+      object RB_9_4: TRadioButton
+        Left = 462
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_9_4Change
+        TabOrder = 3
+      end
+      object RB_9_5: TRadioButton
+        Left = 512
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_9_5Change
+        TabOrder = 4
+      end
+      object RB_9_6: TRadioButton
+        Left = 558
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_9_6Change
+        TabOrder = 5
+      end
+    end
+    object Panel10: TPanel
+      Left = 9
+      Height = 20
+      Hint = 'Définition de la résolution pour la preview (niveau de puissance requis 1/6)'
+      Top = 264
+      Width = 591
+      ClientHeight = 20
+      ClientWidth = 591
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 9
+      object Label16: TLabel
+        Left = 5
+        Height = 15
+        Top = 3
+        Width = 104
+        Caption = 'Alignement RVB'
+        ParentColor = False
+      end
+      object RB_10_1: TRadioButton
+        Left = 318
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_10_1Change
+        TabOrder = 0
+      end
+      object RB_10_2: TRadioButton
+        Left = 369
+        Height = 23
+        Top = 1
+        Width = 23
+        Checked = True
+        OnChange = RB_10_2Change
+        TabOrder = 1
+        TabStop = True
+      end
+      object RB_10_3: TRadioButton
+        Left = 416
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_10_3Change
+        TabOrder = 2
+      end
+      object RB_10_4: TRadioButton
+        Left = 462
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_10_4Change
+        TabOrder = 3
+      end
+      object RB_10_5: TRadioButton
+        Left = 512
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_10_5Change
+        TabOrder = 4
+      end
+      object RB_10_6: TRadioButton
+        Left = 558
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_10_6Change
+        TabOrder = 5
+      end
+    end
+    object Panel11: TPanel
+      Left = 9
+      Height = 20
+      Hint = 'Définition de la résolution pour la preview (niveau de puissance requis 1/6)'
+      Top = 288
+      Width = 591
+      ClientHeight = 20
+      ClientWidth = 591
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 10
+      object Label17: TLabel
+        Left = 5
+        Height = 15
+        Top = 3
+        Width = 84
+        Caption = 'Rotation RVB'
+        ParentColor = False
+      end
+      object RB_11_1: TRadioButton
+        Left = 318
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_11_1Change
+        TabOrder = 0
+      end
+      object RB_11_2: TRadioButton
+        Left = 369
+        Height = 23
+        Top = 1
+        Width = 23
+        Checked = True
+        OnChange = RB_11_2Change
+        TabOrder = 1
+        TabStop = True
+      end
+      object RB_11_3: TRadioButton
+        Left = 416
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_11_3Change
+        TabOrder = 2
+      end
+      object RB_11_4: TRadioButton
+        Left = 462
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_11_4Change
+        TabOrder = 3
+      end
+      object RB_11_5: TRadioButton
+        Left = 512
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_11_5Change
+        TabOrder = 4
+      end
+      object RB_11_6: TRadioButton
+        Left = 558
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_11_6Change
+        TabOrder = 5
+      end
+    end
+    object Shape2: TShape
+      Left = 357
+      Height = 336
+      Top = 8
+      Width = 3
+    end
+    object Shape3: TShape
+      Left = 405
+      Height = 336
+      Top = 8
+      Width = 3
+    end
+    object Shape4: TShape
+      Left = 452
+      Height = 336
+      Top = 8
+      Width = 3
+    end
+    object Shape6: TShape
+      Left = 548
+      Height = 336
+      Top = 8
+      Width = 3
+    end
+    object Shape1: TShape
+      Left = 304
+      Height = 336
+      Top = 8
+      Width = 3
+    end
+    object Panel12: TPanel
+      Left = 9
+      Height = 20
+      Hint = 'Définition de la résolution pour la preview (niveau de puissance requis 2/6)'
+      Top = 240
+      Width = 591
+      ClientHeight = 20
+      ClientWidth = 591
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 11
+      object Label18: TLabel
+        Left = 5
+        Height = 15
+        Top = 3
+        Width = 177
+        Caption = 'Luminance de l''arrière plan'
+        ParentColor = False
+      end
+      object RB_12_1: TRadioButton
+        Left = 318
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_12_1Change
+        TabOrder = 0
+      end
+      object RB_12_2: TRadioButton
+        Left = 369
+        Height = 23
+        Top = 1
+        Width = 23
+        Checked = True
+        OnChange = RB_12_2Change
+        TabOrder = 1
+        TabStop = True
+      end
+      object RB_12_3: TRadioButton
+        Left = 416
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_12_3Change
+        TabOrder = 2
+      end
+      object RB_12_4: TRadioButton
+        Left = 462
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_12_4Change
+        TabOrder = 3
+      end
+      object RB_12_5: TRadioButton
+        Left = 512
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_12_5Change
+        TabOrder = 4
+      end
+      object RB_12_6: TRadioButton
+        Left = 558
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_12_6Change
+        TabOrder = 5
+      end
+    end
+    object Panel13: TPanel
+      Left = 9
+      Height = 20
+      Hint = 'Définition de la résolution pour la preview (niveau de puissance requis 1/6)'
+      Top = 312
+      Width = 591
+      ClientHeight = 20
+      ClientWidth = 591
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 12
+      object Label19: TLabel
+        Left = 5
+        Height = 15
+        Top = 3
+        Width = 149
+        Caption = 'Conversion RVB -> N&&B'
+        ParentColor = False
+      end
+      object RB_13_1: TRadioButton
+        Left = 318
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_13_1Change
+        TabOrder = 0
+      end
+      object RB_13_2: TRadioButton
+        Left = 369
+        Height = 23
+        Top = 1
+        Width = 23
+        Checked = True
+        OnChange = RB_13_2Change
+        TabOrder = 1
+        TabStop = True
+      end
+      object RB_13_3: TRadioButton
+        Left = 416
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_13_3Change
+        TabOrder = 2
+      end
+      object RB_13_4: TRadioButton
+        Left = 462
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_13_4Change
+        TabOrder = 3
+      end
+      object RB_13_5: TRadioButton
+        Left = 512
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_13_5Change
+        TabOrder = 4
+      end
+      object RB_13_6: TRadioButton
+        Left = 558
+        Height = 23
+        Top = 1
+        Width = 23
+        OnChange = RB_13_6Change
+        TabOrder = 5
+      end
+    end
+    object Shape5: TShape
+      Left = 504
+      Height = 336
+      Top = 8
+      Width = 3
+    end
+  end
+  object Button1: TButton
+    Left = 536
+    Height = 22
+    Top = 392
+    Width = 92
+    Caption = 'Appliquer'
+    OnClick = Button1Click
+    TabOrder = 1
+  end
+  object Shape8: TShape
+    Left = 548
+    Height = 336
+    Top = 8
+    Width = 3
+  end
+end

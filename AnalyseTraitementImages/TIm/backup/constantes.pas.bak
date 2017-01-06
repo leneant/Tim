@@ -1,0 +1,117 @@
+unit Constantes;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, compilation;
+
+const
+  c_refresh = 10;
+  c_pixrefresh = 5;
+  version = 'V1.1.0.a14-c1';
+
+  max_tx = 1024; max_ty = 1024; // Résolution maximale
+  avg3_tx = 920; avg3_ty = 920; // Très haute résolution
+  avg2_tx = 800; avg2_ty = 800; // Haute résolution
+  avg1_tx = 690; avg1_ty = 690; // Optimisation des détails
+  avg_tx = 580; avg_ty = 580; // Equilibre temps de preview et details
+  min_tx = 470; min_ty = 470; // Favoriser les temps de calculs sur la preview
+
+  C_Zoom_Size = 121;
+
+  // 64bits windows
+  C_MemoryPix_MaxSizeDefault = 615000000; // 205 Méga pixels max
+  // C_MemoryPix_PreviewSizeDefault = 2764800; // 960x960;
+  C_MemoryPix_PreviewSizeDefault = 3145728; // 1024x1024
+  C_WarningSize = 150000000 ; // 150 Méga pixels
+
+  // 32bits windows
+  // Modified V1.0-RC6
+  C_MemoryPix_MaxSize32 = 81000000; // 27 Méga pixels max
+  // C_MemoryPix_PreviewSize32 = 2764800; //  960x960 ;
+  C_MemoryPix_PreviewSize32 = 3145728; // 1024x1024
+  // /Modified V1.0-RC6
+  // Identification de Tim
+  C_ID_TIM_Win32 =   '[Tim] - Windows 32 bits';
+  C_ID_Tim_Win64 =   '[Tim] - Windows 64 bits';
+  C_ID_Tim_Linux32 = '[Tim] - Linux 32 bits';
+  // Modified V1.0-RC6
+  C_ID_Tim_Linux64 = '[Tim] - Linux 64 bits';
+  // /Modified V1.0-RC6
+  C_ID_Tim_Mac =     '[Tim] - Mac';
+
+  // Configuration Progression
+  _Prog_Calc = 97;
+  _Prog_Calc2 = 92;
+  _Prog_Copy = 3;
+  _Prog_Copy2 = 8;
+
+  // Init tons
+  C_Init_S = 85;
+  C_Init_C = 170;
+
+  // Goctets
+  _2Go = 2147483648;
+  _3Go = 3221225472;
+  _4Go = 4294967296;
+  _8Go = 8589934592;
+
+  // conversion RVB -> luminance
+  _C_LR = 0.2126 ;
+  _C_LV = 0.7152 ;
+  _C_LB = 0.0722 ;
+
+var
+    // Bornes des tons
+  _CTonsSombres : integer ; // < 85 pour être tons sombres
+  _CTonsMoyens : integer ; // >= 85 et < 170 pour être tons moyens
+
+  C_MemoryPix_MaxSize : LongInt;
+  C_MemoryPix_Preview : Longint;
+
+  C_ID_Tim : string;
+
+implementation
+
+begin
+  _CTonsSombres := C_Init_S;
+  _CTonsMoyens := C_Init_C;
+  if (PLT_EXECUTABLE = PLT_WINDOWS) then
+    if (ARCH = ARCH_X86) then begin
+      // Modified V1.0-RC6
+      C_MemoryPix_MaxSize := C_MemoryPix_MaxSize32;
+      C_MemoryPix_Preview := C_MemoryPix_PreviewSize32;
+      // /Modified V1.0-RC6
+      C_ID_Tim := C_ID_TIM_Win32;
+    end else begin
+        C_MemoryPix_MaxSize := C_MemoryPix_MaxSizeDefault;
+        C_MemoryPix_Preview := C_MemoryPix_PreviewSizeDefault;
+        C_ID_Tim := C_ID_TIM_Win64;
+    end
+  else if (PLT_EXECUTABLE = PLT_MAC) then begin
+    // Modified V1.0.2
+    C_ID_Tim := C_ID_Tim_Mac;
+    if (ARCH = ARCH_X86) then begin
+      C_MemoryPix_MaxSize := C_MemoryPix_MaxSize32;
+      C_MemoryPix_Preview := C_MemoryPix_PreviewSize32;
+    end else begin
+        C_MemoryPix_MaxSize := C_MemoryPix_MaxSizeDefault;
+        C_MemoryPix_Preview := C_MemoryPix_PreviewSizeDefault;
+     end;
+  end
+  else begin // Linux 32bits allow high memory usage
+    if (ARCH = ARCH_X86) then begin
+      C_MemoryPix_MaxSize := C_MemoryPix_MaxSizeDefault;
+      C_MemoryPix_Preview := C_MemoryPix_PreviewSizeDefault;
+      C_ID_Tim := C_ID_Tim_Linux32;
+    end else begin
+        C_MemoryPix_MaxSize := C_MemoryPix_MaxSizeDefault;
+        C_MemoryPix_Preview := C_MemoryPix_PreviewSizeDefault;
+        C_ID_Tim := C_ID_Tim_Linux64;
+     end;
+    // /Modified V1.0-RC6
+  end;
+end.
+

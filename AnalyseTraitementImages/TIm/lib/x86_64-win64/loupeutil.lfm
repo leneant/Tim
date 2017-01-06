@@ -1,0 +1,32 @@
+object Loupe: TLoupe
+  Left = 346
+  Height = 121
+  Top = 26
+  Width = 121
+  BorderIcons = []
+  BorderStyle = bsNone
+  Caption = 'Loupe'
+  ClientHeight = 121
+  ClientWidth = 121
+  Color = 3158064
+  Constraints.MaxHeight = 121
+  Constraints.MaxWidth = 121
+  Constraints.MinHeight = 121
+  Constraints.MinWidth = 121
+  OnChangeBounds = FormChangeBounds
+  OnCreate = FormCreate
+  LCLVersion = '1.2.2.0'
+  object imgfocus: TImage
+    Left = 0
+    Height = 122
+    Top = 0
+    Width = 121
+    Align = alClient
+    Center = True
+    Constraints.MaxHeight = 122
+    Constraints.MaxWidth = 122
+    Constraints.MinHeight = 122
+    Constraints.MinWidth = 121
+    OnClick = imgfocusClick
+  end
+end

@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="9"/>
+    <PathDelim Value="\"/>
+    <General>
+      <SessionStorage Value="InProjectDir"/>
+      <MainUnit Value="0"/>
+      <Title Value="Tim"/>
+      <ResourceType Value="res"/>
+      <UseXPManifest Value="True"/>
+      <Icon Value="0"/>
+    </General>
+    <i18n>
+      <EnableI18N LFM="False"/>
+    </i18n>
+    <VersionInfo>
+      <StringTable ProductVersion=""/>
+    </VersionInfo>
+    <BuildModes Count="1">
+      <Item1 Name="Default" Default="True"/>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+      <IncludeFileFilter Value="*.(pas|pp|inc|lfm|lpr|lrs|lpi|lpk|sh|xml)"/>
+      <ExcludeFileFilter Value="*.(bak|ppu|o|so);*~;backup"/>
+    </PublishOptions>
+    <RunParams>
+      <local>
+        <FormatVersion Value="1"/>
+      </local>
+    </RunParams>
+    <RequiredPackages Count="2">
+      <Item1>
+        <PackageName Value="TAChartLazarusPkg"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="LCL"/>
+      </Item2>
+    </RequiredPackages>
+    <Units Count="39">
+      <Unit0>
+        <Filename Value="TIm.lpr"/>
+        <IsPartOfProject Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="unit1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit1"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="..\..\Graphics\memorypix.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MemoryPix"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="..\..\Graphics\tsl.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="TSL"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="..\..\Utils\progresswindows.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ProgressWindow"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="ProgressWindows"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="w_saturation.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="W_Sat"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="W_saturation"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="global.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Global"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="..\..\Utils\utils.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Utils"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="unit3.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form3"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit3"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="unit5.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form5"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit5"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="prev.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="W_Prev"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Prev"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="w_luminance.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="W_Lum"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="W_luminance"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="..\..\Graphics\Luminance.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="w_source.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="W_SRC"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="tempcouleurs.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="W_TempCouleurs"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="TempCouleurs"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="constantes.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Constantes"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="w_adddelcolorsignal.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="W_AddDelColor"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="W_AddDelColorSignal"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="saturationglobale.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="W_SatG"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="convolution.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Convolution"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="w_convolution.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="W_Filtres"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="W_Convolution"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="..\..\Utils\diary.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Diary"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="..\..\Utils\marqueurs.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Marqueurs"/>
+      </Unit21>
+      <Unit22>
+        <Filename Value="w_contrasteg.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="W_ContratsG"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="W_ContrasteG"/>
+      </Unit22>
+      <Unit23>
+        <Filename Value="w_masqueflou.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="W_MF"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="W_MasqueFlou"/>
+      </Unit23>
+      <Unit24>
+        <Filename Value="masqueflou.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MasqueFlou"/>
+      </Unit24>
+      <Unit25>
+        <Filename Value="wavelets.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Wavelets"/>
+      </Unit25>
+      <Unit26>
+        <Filename Value="w_waves.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="W_Wavelets"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit26>
+      <Unit27>
+        <Filename Value="w_rgb_align.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="W_RGBAlign"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="W_RGB_Align"/>
+      </Unit27>
+      <Unit28>
+        <Filename Value="rvb.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="RVB"/>
+      </Unit28>
+      <Unit29>
+        <Filename Value="loupeutil.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Loupe"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="loupeUtil"/>
+      </Unit29>
+      <Unit30>
+        <Filename Value="..\..\Utils\timexception.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="TimException"/>
+      </Unit30>
+      <Unit31>
+        <Filename Value="saveenv.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="SaveEnv"/>
+      </Unit31>
+      <Unit32>
+        <Filename Value="compilation.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Compilation"/>
+      </Unit32>
+      <Unit33>
+        <Filename Value="..\..\Graphics\filepix.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="FilePix"/>
+      </Unit33>
+      <Unit34>
+        <Filename Value="advancedfilters.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="AdvancedFilters"/>
+      </Unit34>
+      <Unit35>
+        <Filename Value="backgroundlum.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="W_BackgroundLum"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="BackgroundLum"/>
+      </Unit35>
+      <Unit36>
+        <Filename Value="rotationrbv.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form2"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="RotationRBV"/>
+      </Unit36>
+      <Unit37>
+        <Filename Value="configuration.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="W_Configuration"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Configuration"/>
+      </Unit37>
+      <Unit38>
+        <Filename Value="w_rgbtobn.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="W__RGBToBN"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="W_RGBToBN"/>
+      </Unit38>
+    </Units>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="11"/>
+    <PathDelim Value="\"/>
+    <Target>
+      <Filename Value="Win-x64-Tim-V1.1.0.a13-c4"/>
+    </Target>
+    <SearchPaths>
+      <IncludeFiles Value="$(ProjOutDir)"/>
+      <OtherUnitFiles Value="..\..\Utils;..\..\Graphics"/>
+      <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+    </SearchPaths>
+    <CodeGeneration>
+      <TargetCPU Value="x86_64"/>
+      <TargetOS Value="linux"/>
+      <Optimizations>
+        <OptimizationLevel Value="3"/>
+        <VariablesInRegisters Value="True"/>
+      </Optimizations>
+    </CodeGeneration>
+    <Linking>
+      <Debugging>
+        <GenerateDebugInfo Value="False"/>
+        <UseValgrind Value="True"/>
+      </Debugging>
+      <Options>
+        <Win32>
+          <GraphicApplication Value="True"/>
+        </Win32>
+      </Options>
+    </Linking>
+  </CompilerOptions>
+  <Debugging>
+    <Exceptions Count="4">
+      <Item1>
+        <Name Value="EAbort"/>
+      </Item1>
+      <Item2>
+        <Name Value="ECodetoolError"/>
+      </Item2>
+      <Item3>
+        <Name Value="EFOpenError"/>
+      </Item3>
+      <Item4>
+        <Name Value="EOutOfMemory"/>
+      </Item4>
+    </Exceptions>
+  </Debugging>
+</CONFIG>

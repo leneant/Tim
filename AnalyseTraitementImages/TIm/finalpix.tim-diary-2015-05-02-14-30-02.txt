@@ -1,0 +1,8 @@
+-- Tim-Rapport V1.1.0.a01 ----------------
+E:\Developpements\Tim\BrancheV1.1\V1.1.0.a01\AnalyseTraitementImages\TIm\finalpix.tim-diary-2015-05-02-14-30-02.txt
+-------------------------------
+Commande : Ouverture image
+-- Param :
+--       File name : E:\Developpements\Tim\BrancheV1.1\V1.1.0.a01\AnalyseTraitementImages\TIm\finalpix.tim
+--       Largeur : 0
+--       Hauteur : 0
