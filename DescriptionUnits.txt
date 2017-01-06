@@ -1,0 +1,92 @@
+Tim :
+
+1- Les unités :
+---------------
+
+Global : 
+Défini les types, les variables et les méthodes partagées dans l'ensemble des autres unités du programme.
+Méthodes :
+- preparePreview2 gère les preview en taille 1:1 (zone de l'image)
+- preparePreview gère les preview mise à l'échelle (image entière)
+- prepareZoom gère la fenêtre des zooms (filtres de convolutions, masque flou et wavelets)
+
+Constantes :
+Définition de toutes les constantes du projet.
+
+Compilations :
+Sert à définir les caractéristiques de la cible de compilation et la cible de compilation (windows, linux, 32 ou 64 bits)
+
+MemoryPix :
+Gestion de la mémoire bas niveau. Offre les méthodes d'accès mémoire pour la représentation interne des images dans l'espace de travail de Tim.
+
+TimException :
+Définition des exceptions spécifiques à Tim
+
+ProgressWindow :
+Défini toutes les méthodes qui permettent de gérer la fenêtre de progression des calculs.
+
+Marqueurs :
+Défini toutes les variables et initialise leurs valeurs pour détecter les pixels cramés ou bouchés.
+Tim ne détecte pas les valeurs de pixels cramés ou bouchés que sur la luminance. Mais il détecte dès qu'un signal R, G ou B dépasse les limites
+de représentation (<0 ou >255).
+
+SaveEnv :
+Offre toutes les méthodes nécessaire à l'enregistrement et la restauration des tailles et des positions des fenêtres.
+Chaque fenêtres doit enregistrer ses caractéristiques avec l'évènement FormChangeBounds
+Chaque fenêtre doit posséder un ID unique
+L'initialisation de la position et de la taille des fenêtres enregistrées se fait dans l'unité Tim après la création des instances de chaque fenêtre.
+
+Utils 
+Petite unité qui propose des fonctions utilitaire comme la transformation d'un path (chemin de fichiers) en nom de fichier, de calcul d'approximation, 
+du formatage d'un nombre réel en chaîne de caractères.
+
+LoupeUtils :
+Gère la loupe qui apparait sur la fenêtre d'image source et de preview lorsque le click droit de la souris est enfoncé.
+
+Diary :
+Offre toutes les méthodes permettant de générer les rapports de traitement de Tim.
+Les fenêtres remplissent une structure avec la commande et chacun de ses paramètres.
+Cette structure vient s'ajouter au fichier de rapport lorsque le résultat est validé depuis la fenêtre de résultat des traitement.
+
+RVB :
+Offre toutes les méthodes réalisant les traitements RVB sur les images :
+- Calcul des courbes
+- Application de l'alignement des courbes RVB
+
+Luminance :
+Offre toutes les méthode réalisant les traitements de luminance sur les images :
+- Gamma
+- AnteGamm
+- Mix
+- Déterminantion des courbes (affichage de contrôle)
+- Application des corrections de la luminance sur l'image
+
+TSL :
+Offre toutes les fonctions de gestion selon le système Teinte Saturation Luminance (TSL)
+Modification de la saturation des couleurs, modification de la température de l'image, addition ou soustraction d'une couleur à l'image,
+Modification des couleurs d'une même teinte (teinte adjascente ou opposée sur le cercle des couleurs)
+
+Convolution et Convolution_red :
+Offrent les méthodes et types pour traiter les filtres de convolution avec des matrices de convolution.
+Convolution est utilisée par les filtres de convolution et les wavelets.
+Convolution_red est utilisé par le masque flou.
+
+Masque flou :
+Offre les méthodes de calcul du masque flou en s'appuyant sur les filtre de convolution (Convolution_red)
+
+Wavelets :
+Offre les méthodes de calcul des wavelets ainsi que leur paramétrage (définition de matrices de convolution).
+
+Tim :
+Initialisation du programme.
+
+Les autres unités correspondent aux fenêtres de Tim.
+L'unité Unit1 corrspond à la fenêtre principale de Tim. 
+Dans cette unité la mémoire interne des images est allouée afin d'éviter la fragmentation de la mémoire.
+Cette mémoire est libérée à la destruction de cette fenêtre lorsque le programme s'interrompt.
+
+2- Ouverture du projet :
+------------------------
+
+Le projet s'ouvre dans lazarus avec le fichier TIm.lpi.
+TIm.lpi est positionné dans le répertoire "AnalyseTraitementImages\TIm".

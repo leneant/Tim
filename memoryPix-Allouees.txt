@@ -1,0 +1,3 @@
+_finalPix : taille max
+_lumprev : preview
+_calculatedpix : taille max
