@@ -1,0 +1,455 @@
+unit W_ContrasteG;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, FileUtil, TAGraph, TASeries, Forms, Controls, Graphics,
+  Dialogs, StdCtrls, ExtCtrls, ComCtrls, Luminance, Global, Diary, Constantes,
+  Marqueurs, Prev, types, Unit3, ProgressWindows, saveenv, w_source;
+
+type
+
+  { TW_ContratsG }
+
+  TW_ContratsG = class(TForm)
+    Button4: TButton;
+    Button5: TButton;
+    CB_Bleus: TCheckBox;
+    CB_C: TCheckBox;
+    CB_Cyans: TCheckBox;
+    CB_Jaunes: TCheckBox;
+    CB_M: TCheckBox;
+    CB_Magentas: TCheckBox;
+    CB_Mono: TCheckBox;
+    CB_Rouges: TCheckBox;
+    CB_S: TCheckBox;
+    CB_Verts: TCheckBox;
+    Chart1: TChart;
+    Edit2: TEdit;
+    Ind_Bouche: TShape;
+    Ind_Crame: TShape;
+    Label1: TLabel;
+    Label2: TLabel;
+    lumscale: TLineSeries;
+    Panel1: TPanel;
+    Panel2: TPanel;
+    Shape3: TShape;
+    Shape5: TShape;
+    TB_Contrast: TTrackBar;
+    procedure Button4Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
+    procedure CB_BleusChange(Sender: TObject);
+    procedure CB_CChange(Sender: TObject);
+    procedure CB_CyansChange(Sender: TObject);
+    procedure CB_JaunesChange(Sender: TObject);
+    procedure CB_MagentasChange(Sender: TObject);
+    procedure CB_MChange(Sender: TObject);
+    procedure CB_MonoChange(Sender: TObject);
+    procedure CB_RougesChange(Sender: TObject);
+    procedure CB_SChange(Sender: TObject);
+    procedure CB_VertsChange(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
+    procedure FormChangeBounds(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure FormHide(Sender: TObject);
+    procedure TB_ContrastChange(Sender: TObject);
+    procedure TB_ContrastClick(Sender: TObject);
+    procedure TB_ContrastKeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
+    procedure TB_ContrastMouseMove(Sender: TObject; Shift: TShiftState; X,
+      Y: Integer);
+    procedure TB_ContrastMouseWheel(Sender: TObject; Shift: TShiftState;
+      WheelDelta: Integer; MousePos: TPoint; var Handled: Boolean);
+  private
+    { private declarations }
+    const _code = 13;
+  public
+    { public declarations }
+    procedure Init;
+    procedure setControlEnabled(en:boolean);
+  end;
+
+var
+  W_ContratsG: TW_ContratsG;
+
+implementation
+
+{$R *.lfm}
+
+var askRedraw : boolean ;
+    _init : boolean;
+
+procedure TW_ContratsG.setControlEnabled(en:boolean);
+begin
+  Chart1.Enabled := en;
+  TB_Contrast.Enabled := en;
+  Button4.Enabled := en;
+  Button5.Enabled := en;
+  Panel1.Enabled := en;
+  Panel2.Enabled := en;
+end;
+
+procedure TW_ContratsG.FormActivate(Sender: TObject);
+var i : integer;
+begin
+  if Form3.isVisible then exit;
+  setControlEnabled(true);
+  _RefreshRequest := false;
+  if not isTransaction then begin
+    if _S_Reanalyse then begin
+      _event := true;
+      Init;
+      preparePreview(W_SRC.View, W_Prev.Preview);
+      _S_Reanalyse := false;
+      _event := false;
+    _lumprev.Init(W_Prev.Preview);
+    GetCourbeLumiereGAMMA(_lumprev, Lumiere, 1.0);
+    W_ContratsG.lumscale.Clear ;
+    for i:=0 to 255 do
+      begin
+        W_ContratsG.lumscale.AddXY(i, Lumiere[i]);
+      end;
+    end;
+  end;
+end;
+
+procedure TW_ContratsG.FormChangeBounds(Sender: TObject);
+begin
+  if _env_maj then exit;
+  _G_Win_Conf._fenetre[self._code].x := self.Left;
+  _G_Win_Conf._fenetre[self._code].y := self.Top;
+  _G_Win_Conf._fenetre[self._code]._width := self.Width;
+  _G_Win_Conf._fenetre[self._code]._height := self.Height;
+end;
+
+procedure TW_ContratsG.FormCreate(Sender: TObject);
+begin
+
+end;
+
+procedure TW_ContratsG.FormHide(Sender: TObject);
+begin
+  _currentWin := nil;
+end;
+
+procedure TW_ContratsG.TB_ContrastChange(Sender: TObject);
+begin
+
+end;
+
+procedure TW_ContratsG.Button4Click(Sender: TObject);
+var x, y : integer;
+  _txt : string;
+begin
+  isTransaction := true;
+  _event := true;
+  W_ContratsG.Enabled := false;
+  Form3.Show;
+  Form3.Enabled := false;
+  ProgressWindow.ShowWindow('Traitements...', 'Application des réglages');
+  Screen.Cursor := crHourGlass ;
+  _finalpix.getImageSize(x,y);
+  _calculatedpix.Init(x,y,false);
+  ApplyCourbeLumiereContrastG (_finalpix, _calculatedpix, Form3.imgres, W_ContratsG.TB_Contrast.Position,
+    _ATonsClairs, _ATonsMoyens, _ATonsSombres, t_rouge, t_jaune, t_vert, t_cyan, t_bleu, t_magenta, t_mono, true);
+  ProgressWindow.SetProgress('Réglages appliqués', 100);
+  Form3.Refresh;
+  init_param(_params);
+  _param := new_param('Coef contraste', Edit2.Text);
+  add_param(_params, _param);
+  str (_CTonsSombres, _txt);
+  _param := new_param('Limite tons sombres/tons moyens', _txt);
+  add_param(_params, _param);
+  str (_CTonsMoyens, _txt);
+  _param := new_param('Limite tons moyens/tons clairs', _txt);
+  add_param(_params, _param);
+  if CB_C.Checked then
+    _param := new_param('Application sur tons clairs', 'Oui')
+  else
+    _param := new_param('Application sur tons clairs', 'Non') ;
+  add_param(_params, _param);
+  if CB_M.Checked then
+    _param := new_param('Application sur tons moyens', 'Oui')
+  else
+    _param := new_param('Application sur tons moyens', 'Non') ;
+  add_param(_params, _param);
+  if CB_S.Checked then
+    _param := new_param('Application sur tons sombres', 'Oui')
+  else
+    _param := new_param('Application sur tons sombres', 'Non') ;
+  add_param(_params, _param);
+  if CB_Rouges.Checked then
+    _param := new_param('Application sur teintes rouges', 'Oui')
+  else
+    _param := new_param('Application sur teintes rouges', 'Non') ;
+  add_param(_params, _param);
+  if CB_Jaunes.Checked then
+    _param := new_param('Application sur teintes jaunes', 'Oui')
+  else
+    _param := new_param('Application sur teintes jaunes', 'Non') ;
+  add_param(_params, _param);
+  if CB_Verts.Checked then
+    _param := new_param('Application sur teintes vertes', 'Oui')
+  else
+    _param := new_param('Application sur teintes vertes', 'Non') ;
+  add_param(_params, _param);
+  if CB_Cyans.Checked then
+    _param := new_param('Application sur teintes cyans', 'Oui')
+  else
+    _param := new_param('Application sur teintes cyans', 'Non') ;
+  add_param(_params, _param);
+  if CB_Bleus.Checked then
+    _param := new_param('Application sur teintes bleues', 'Oui')
+  else
+    _param := new_param('Application sur teintes bleues', 'Non') ;
+  add_param(_params, _param);
+  if CB_Magentas.Checked then
+    _param := new_param('Application sur teintes magentas', 'Oui')
+  else
+    _param := new_param('Application sur teintes magentas', 'Non') ;
+  add_param(_params, _param);
+  if CB_Mono.Checked then
+    _param := new_param('Application sur l''achromatisme', 'Oui')
+  else
+    _param := new_param('Application sur l''achromatisme', 'Non') ;
+  add_param(_params, _param);
+  _command := new_command('Contraste global', _params);
+  isTransaction := true;
+  ProgressWindow.HideWindow;
+  isTransaction := false;
+  setControlEnabled(false);
+  W_ContratsG.Enabled := true;
+  Form3.Enabled := true;
+  Screen.Cursor := crDefault;
+  _event := false;
+  Form3.setFocus;
+end;
+
+
+procedure TW_ContratsG.TB_ContrastClick(Sender: TObject);
+var keypressed : Word;
+  Shift : TShiftState;
+begin
+    keypressed := Word(#32);
+    TB_ContrastKeyDown(Sender, keypressed, Shift);
+end;
+
+procedure drawContrastChange;
+var i, width, height : integer;
+begin
+  if not isTransaction then begin
+    isTransaction := true ;
+    while askRedraw do begin
+      askRedraw := false;
+      W_ContratsG.lumscale.clear;
+      _lumprev.getImageSize(width, height);
+      _calculatedpix.Init(width, height, false);
+      bouchee := false;
+      cramee := false;
+      ApplyCourbeLumiereContrastG (_lumprev, _calculatedpix, W_Prev.Preview, W_ContratsG.TB_Contrast.Position,
+        _ATonsClairs, _ATonsMoyens, _ATonsSombres, t_rouge, t_jaune, t_vert, t_cyan, t_bleu, t_magenta, t_mono, false);
+      GetCourbeLumiereGAMMA(_calculatedpix, Lumiere, 1.0);
+      W_ContratsG.lumscale.Clear ;
+      for i:=0 to 255 do
+        begin
+          W_ContratsG.lumscale.AddXY(i, Lumiere[i]);
+        end;
+      if bouchee then W_ContratsG.Ind_Bouche.Brush.Color := C_BOUCHE else
+        W_ContratsG.Ind_Bouche.Brush.Color := C_RIEN;
+      if cramee then W_ContratsG.Ind_Crame.Brush.Color := C_CRAME else
+        W_ContratsG.Ind_Crame.Brush.Color := C_RIEN;
+    end;
+    Application.ProcessMessages;
+    isTransaction := false;
+  end;
+end;
+
+procedure TW_ContratsG.Button5Click(Sender: TObject);
+begin
+  self.Init;
+  Application.ProcessMessages;
+  askRedraw := true;
+  drawContrastChange;
+end;
+
+procedure TW_ContratsG.CB_BleusChange(Sender: TObject);
+begin
+  _event := true;
+  t_bleu := CB_Bleus.Checked;
+  if not _init then begin
+    askRedraw := true;
+    drawContrastChange;
+  end;
+  _event := false;
+end;
+
+procedure TW_ContratsG.CB_CChange(Sender: TObject);
+begin
+  _event := true;
+  _ATonsClairs := CB_C.Checked;
+  if not _init then begin
+    askRedraw := true;
+    drawContrastChange;
+  end;
+  _event := false;
+end;
+
+procedure TW_ContratsG.CB_CyansChange(Sender: TObject);
+begin
+  _event := true;
+  t_cyan := CB_cyans.Checked;
+  if not _init then begin
+    askRedraw := true;
+    drawContrastChange;
+  end;
+  _event := false;
+end;
+
+procedure TW_ContratsG.CB_JaunesChange(Sender: TObject);
+begin
+  _event := true;
+  t_jaune := CB_Jaunes.Checked;
+  if not _init then begin
+    askRedraw := true;
+    drawContrastChange;
+  end;
+  _event := false;
+end;
+
+procedure TW_ContratsG.CB_MagentasChange(Sender: TObject);
+begin
+  _event := true;
+  t_magenta := CB_magentas.Checked;
+  if not _init then begin
+    askRedraw := true;
+    drawContrastChange;
+  end;
+  _event := false;
+end;
+
+procedure TW_ContratsG.CB_MChange(Sender: TObject);
+begin
+  _event := true;
+  _ATonsMoyens := CB_M.Checked;
+  if not _init then begin
+    askRedraw := true;
+    drawContrastChange;
+  end;
+  _event := false;
+end;
+
+procedure TW_ContratsG.CB_MonoChange(Sender: TObject);
+begin
+  _event := true;
+  t_mono := CB_magentas.Checked;
+  if not _init then begin
+    askRedraw := true;
+    drawContrastChange;
+  end;
+  _event := false;
+end;
+
+procedure TW_ContratsG.CB_RougesChange(Sender: TObject);
+begin
+  _event := true;
+  t_rouge := CB_Rouges.Checked;
+  if not _init then begin
+    askRedraw := true;
+    drawContrastChange;
+  end;
+  _event := false;
+end;
+
+procedure TW_ContratsG.CB_SChange(Sender: TObject);
+begin
+  _event := true;
+  _ATonsSombres := CB_S.Checked;
+  if not _init then begin
+    askRedraw := true;
+    drawContrastChange;
+  end;
+  _event := false;
+end;
+
+procedure TW_ContratsG.CB_VertsChange(Sender: TObject);
+begin
+  _event := true;
+  t_vert := CB_Verts.Checked;
+  if not _init then begin
+    askRedraw := true;
+    drawContrastChange;
+  end;
+  _event := false;
+end;
+
+procedure TW_ContratsG.TB_ContrastKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+var valeur : integer;
+  txt : string;
+begin
+  if _event then exit;
+  _event := true;
+  valeur := TB_Contrast.Position;
+  str(valeur, txt);
+  Edit2.text := txt;
+  askRedraw := true;
+  drawContrastChange;
+  _event := false;
+  if _lostfocus then begin
+    _lostfocus := false;
+    TB_ContrastKeyDown(Sender, Key, Shift);
+  end;
+end;
+
+procedure TW_ContratsG.TB_ContrastMouseMove(Sender: TObject;
+  Shift: TShiftState; X, Y: Integer);
+var keypressed : Word;
+begin
+  if not(ssleft in Shift) then begin
+    TB_Contrast.Enabled := false;
+    TB_Contrast.Enabled := true;
+    TB_Contrast.SetFocus;
+    _lostfocus := true;
+  end else begin
+    keypressed := Word(#32);
+    TB_ContrastKeyDown(Sender, keypressed, Shift);
+  end;
+end;
+
+procedure TW_ContratsG.TB_ContrastMouseWheel(Sender: TObject;
+  Shift: TShiftState; WheelDelta: Integer; MousePos: TPoint;
+  var Handled: Boolean);
+begin
+  TB_ContrastClick(Sender);
+end;
+
+procedure TW_ContratsG.Init;
+begin
+  _init := true;
+  TB_Contrast.Position := 0;
+  Edit2.Text :='0';
+  Edit2.Color :=clDefault;
+  W_ContratsG.Ind_Crame.Brush.Color := C_RIEN;
+  W_ContratsG.Ind_Bouche.Brush.Color := C_RIEN;
+  lumscale.Clear;
+  W_ContratsG.CB_C.Checked := _ATonsClairs;
+  W_ContratsG.CB_M.Checked := _ATonsMoyens;
+  W_ContratsG.CB_S.Checked := _ATonsSombres;
+  W_ContratsG.CB_Rouges.Checked := t_rouge;
+  W_ContratsG.CB_Jaunes.Checked := t_jaune;
+  W_ContratsG.CB_Verts.Checked := t_vert;
+  W_ContratsG.CB_Cyans.Checked := t_cyan;
+  W_ContratsG.CB_Bleus.Checked := t_bleu;
+  W_ContratsG.CB_Magentas.Checked := t_magenta;
+  W_ContratsG.CB_Mono.Checked := t_Mono;
+  _init := false;
+end;
+
+
+begin
+  askRedraw := false;
+  _init := false;
+end.
+

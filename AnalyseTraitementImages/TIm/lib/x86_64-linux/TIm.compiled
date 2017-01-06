@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Compiler Value="/usr/bin/fpc" Date="1473706092"/>
+  <Params Value=" -Tlinux -Px86_64 -MObjFPC -Scghi -Cg -Ct -O3 -OoREGVAR -l -vewnhibq -Fi/home/pascal/Developpements/V1.1.0.a14-c1-linux-X64/AnalyseTraitementImages/TIm/lib/x86_64-linux -Fl/opt/gnome/lib -Fu/home/pascal/Developpements/V1.1.0.a14-c1-linux-X64/Utils -Fu/home/pascal/Developpements/V1.1.0.a14-c1-linux-X64/Graphics -Fu/usr/lib/lazarus/1.6/components/tachart/lib/x86_64-linux/gtk2 -Fu/usr/lib/lazarus/1.6/components/ideintf/units/x86_64-linux/gtk2 -Fu/usr/lib/lazarus/1.6/components/lazcontrols/lib/x86_64-linux/gtk2 -Fu/usr/lib/lazarus/1.6/lcl/units/x86_64-linux/gtk2 -Fu/usr/lib/lazarus/1.6/lcl/units/x86_64-linux -Fu/usr/lib/lazarus/1.6/components/lazutils/lib/x86_64-linux -Fu/usr/lib/lazarus/1.6/packager/units/x86_64-linux -Fu/home/pascal/Developpements/V1.1.0.a14-c1-linux-X64/AnalyseTraitementImages/TIm/ -FU/home/pascal/Developpements/V1.1.0.a14-c1-linux-X64/AnalyseTraitementImages/TIm/lib/x86_64-linux/ -oLinux-x64-Tim-V1.1.0.a14-c1 -dLCL -dLCLgtk2 TIm.lpr"/>
+</CONFIG>

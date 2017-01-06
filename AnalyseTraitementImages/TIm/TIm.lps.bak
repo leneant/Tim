@@ -1,0 +1,720 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="9"/>
+    <BuildModes Active="Default"/>
+    <Units Count="52">
+      <Unit0>
+        <Filename Value="TIm.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="14"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="303"/>
+        <CursorPos X="52" Y="325"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="unit1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit1"/>
+        <EditorIndex Value="31"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="165"/>
+        <CursorPos X="19" Y="171"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="..\..\Graphics\memorypix.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MemoryPix"/>
+        <EditorIndex Value="30"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="249"/>
+        <CursorPos X="14" Y="268"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="..\..\Graphics\tsl.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="TSL"/>
+        <EditorIndex Value="35"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="111"/>
+        <CursorPos Y="136"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="..\..\Utils\progresswindows.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ProgressWindow"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="ProgressWindows"/>
+        <EditorIndex Value="38"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="82"/>
+        <CursorPos Y="108"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="w_saturation.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="W_Sat"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="W_saturation"/>
+        <EditorIndex Value="26"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="265"/>
+        <CursorPos Y="270"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="global.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Global"/>
+        <EditorIndex Value="12"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="116"/>
+        <CursorPos Y="113"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="..\..\Utils\utils.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Utils"/>
+        <EditorIndex Value="11"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="72"/>
+        <CursorPos Y="98"/>
+        <UsageCount Value="201"/>
+        <Loaded Value="True"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="unit3.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form3"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit3"/>
+        <EditorIndex Value="10"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="117"/>
+        <CursorPos X="17" Y="126"/>
+        <UsageCount Value="201"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="unit5.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form5"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit5"/>
+        <EditorIndex Value="29"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="50"/>
+        <CursorPos Y="76"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="prev.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="W_Prev"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Prev"/>
+        <EditorIndex Value="9"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="168"/>
+        <CursorPos Y="194"/>
+        <UsageCount Value="201"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="w_luminance.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="W_Lum"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="W_luminance"/>
+        <EditorIndex Value="17"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="327"/>
+        <CursorPos X="41" Y="330"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="..\..\Graphics\Luminance.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="18"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="125"/>
+        <CursorPos Y="137"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="w_source.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="W_SRC"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="8"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="169"/>
+        <CursorPos Y="178"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="tempcouleurs.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="W_TempCouleurs"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="TempCouleurs"/>
+        <EditorIndex Value="7"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="169"/>
+        <CursorPos X="3" Y="195"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="constantes.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Constantes"/>
+        <EditorIndex Value="24"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="4"/>
+        <CursorPos X="27" Y="13"/>
+        <UsageCount Value="201"/>
+        <Loaded Value="True"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="w_adddelcolorsignal.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="W_AddDelColor"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="W_AddDelColorSignal"/>
+        <EditorIndex Value="36"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="563"/>
+        <CursorPos X="3" Y="565"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="saturationglobale.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="W_SatG"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="28"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="146"/>
+        <CursorPos X="27" Y="146"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="convolution.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Convolution"/>
+        <EditorIndex Value="1"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="94"/>
+        <CursorPos Y="108"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="w_convolution.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="W_Filtres"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="W_Convolution"/>
+        <EditorIndex Value="2"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="1052"/>
+        <CursorPos Y="1078"/>
+        <UsageCount Value="204"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="..\..\Utils\diary.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Diary"/>
+        <EditorIndex Value="6"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="136"/>
+        <CursorPos Y="162"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="..\..\Utils\marqueurs.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Marqueurs"/>
+        <EditorIndex Value="27"/>
+        <WindowIndex Value="1"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+      </Unit21>
+      <Unit22>
+        <Filename Value="w_contrasteg.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="W_ContratsG"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="W_ContrasteG"/>
+        <EditorIndex Value="21"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="146"/>
+        <CursorPos X="3" Y="146"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit22>
+      <Unit23>
+        <Filename Value="w_masqueflou.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="W_MF"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="W_MasqueFlou"/>
+        <EditorIndex Value="22"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="307"/>
+        <CursorPos Y="314"/>
+        <UsageCount Value="205"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit23>
+      <Unit24>
+        <Filename Value="masqueflou.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MasqueFlou"/>
+        <EditorIndex Value="3"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="49"/>
+        <CursorPos Y="59"/>
+        <UsageCount Value="203"/>
+        <Loaded Value="True"/>
+      </Unit24>
+      <Unit25>
+        <Filename Value="wavelets.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Wavelets"/>
+        <EditorIndex Value="4"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="262"/>
+        <CursorPos Y="275"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+      </Unit25>
+      <Unit26>
+        <Filename Value="w_waves.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="W_Wavelets"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="5"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="811"/>
+        <CursorPos X="3" Y="835"/>
+        <UsageCount Value="201"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit26>
+      <Unit27>
+        <Filename Value="w_rgb_align.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="W_RGBAlign"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="W_RGB_Align"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="258"/>
+        <CursorPos Y="277"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit27>
+      <Unit28>
+        <Filename Value="rvb.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="RVB"/>
+        <EditorIndex Value="16"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="209"/>
+        <CursorPos Y="232"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+      </Unit28>
+      <Unit29>
+        <Filename Value="loupeutil.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Loupe"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="loupeUtil"/>
+        <EditorIndex Value="23"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="30"/>
+        <CursorPos Y="56"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit29>
+      <Unit30>
+        <Filename Value="..\..\Utils\timexception.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="TimException"/>
+        <EditorIndex Value="34"/>
+        <WindowIndex Value="1"/>
+        <CursorPos X="19" Y="13"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+      </Unit30>
+      <Unit31>
+        <Filename Value="saveenv.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="SaveEnv"/>
+        <EditorIndex Value="13"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="3"/>
+        <CursorPos X="45" Y="12"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+      </Unit31>
+      <Unit32>
+        <Filename Value="compilation.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Compilation"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="33"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="7"/>
+        <CursorPos X="27" Y="28"/>
+        <UsageCount Value="201"/>
+        <Loaded Value="True"/>
+      </Unit32>
+      <Unit33>
+        <Filename Value="..\..\Graphics\filepix.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="FilePix"/>
+        <EditorIndex Value="15"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="92"/>
+        <CursorPos X="11" Y="108"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+      </Unit33>
+      <Unit34>
+        <Filename Value="advancedfilters.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="AdvancedFilters"/>
+        <EditorIndex Value="19"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="116"/>
+        <CursorPos X="11" Y="116"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+      </Unit34>
+      <Unit35>
+        <Filename Value="backgroundlum.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="W_BackgroundLum"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="BackgroundLum"/>
+        <EditorIndex Value="20"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="406"/>
+        <CursorPos Y="432"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit35>
+      <Unit36>
+        <Filename Value="rotationrbv.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form2"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="RotationRBV"/>
+        <EditorIndex Value="25"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="118"/>
+        <CursorPos X="25" Y="131"/>
+        <UsageCount Value="166"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit36>
+      <Unit37>
+        <Filename Value="configuration.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="W_Configuration"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Configuration"/>
+        <EditorIndex Value="32"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="955"/>
+        <CursorPos X="13" Y="980"/>
+        <UsageCount Value="140"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit37>
+      <Unit38>
+        <Filename Value="w_rgbtobn.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="W__RGBToBN"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="W_RGBToBN"/>
+        <EditorIndex Value="37"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="351"/>
+        <CursorPos X="19" Y="356"/>
+        <UsageCount Value="45"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit38>
+      <Unit39>
+        <Filename Value="convolution_red.pas"/>
+        <TopLine Value="126"/>
+        <CursorPos Y="195"/>
+        <UsageCount Value="60"/>
+      </Unit39>
+      <Unit40>
+        <Filename Value="unit4.pas"/>
+        <ComponentName Value="Form2"/>
+        <ResourceBaseClass Value="Form"/>
+        <UsageCount Value="5"/>
+      </Unit40>
+      <Unit41>
+        <Filename Value="tempcouleurs.lfm"/>
+        <UsageCount Value="8"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit41>
+      <Unit42>
+        <Filename Value="D:\MesApplications\lazarus_x64\lcl\include\wincontrol.inc"/>
+        <TopLine Value="5624"/>
+        <CursorPos Y="5637"/>
+        <UsageCount Value="5"/>
+      </Unit42>
+      <Unit43>
+        <Filename Value="D:\MesApplications\lazarus1.2_x86\lcl\include\customcheckbox.inc"/>
+        <TopLine Value="101"/>
+        <CursorPos Y="117"/>
+        <UsageCount Value="1"/>
+      </Unit43>
+      <Unit44>
+        <Filename Value="D:\MesApplications\lazarus1.2.2_x86\lcl\include\customform.inc"/>
+        <TopLine Value="447"/>
+        <CursorPos Y="466"/>
+        <UsageCount Value="8"/>
+      </Unit44>
+      <Unit45>
+        <Filename Value="D:\MesApplications\Lazarus1.2.6_x86\lcl\intfgraphics.pas"/>
+        <UnitName Value="IntfGraphics"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="2954"/>
+        <CursorPos Y="2969"/>
+        <UsageCount Value="4"/>
+      </Unit45>
+      <Unit46>
+        <Filename Value="D:\MesApplications\Lazarus1.2.6_x86\lcl\include\customcheckbox.inc"/>
+        <TopLine Value="106"/>
+        <CursorPos Y="117"/>
+        <UsageCount Value="5"/>
+      </Unit46>
+      <Unit47>
+        <Filename Value="D:\MesApplications\Lazarus1.4.0_x86\components\lazutils\lazutf8classes.pas"/>
+        <UnitName Value="LazUTF8Classes"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="64"/>
+        <UsageCount Value="9"/>
+      </Unit47>
+      <Unit48>
+        <Filename Value="D:\MesApplications\Lazarus1.4.0_x86\lcl\include\picture.inc"/>
+        <TopLine Value="737"/>
+        <CursorPos Y="745"/>
+        <UsageCount Value="7"/>
+      </Unit48>
+      <Unit49>
+        <Filename Value="D:\MesApplications\Lazarus1.4.0_x86\lcl\include\menuitem.inc"/>
+        <TopLine Value="78"/>
+        <CursorPos Y="86"/>
+        <UsageCount Value="7"/>
+      </Unit49>
+      <Unit50>
+        <Filename Value="D:\MesApplications\Lazarus1.2.6_x86\lcl\include\customform.inc"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="646"/>
+        <CursorPos Y="661"/>
+        <UsageCount Value="8"/>
+      </Unit50>
+      <Unit51>
+        <Filename Value="D:\MesApplications\Lazarus1.2.6_x86\lcl\include\menuitem.inc"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="272"/>
+        <CursorPos Y="287"/>
+        <UsageCount Value="8"/>
+      </Unit51>
+    </Units>
+    <JumpHistory Count="30" HistoryIndex="29">
+      <Position1>
+        <Filename Value="w_rgbtobn.pas"/>
+        <Caret Line="102" Column="25" TopLine="95"/>
+      </Position1>
+      <Position2>
+        <Filename Value="w_rgbtobn.pas"/>
+        <Caret Line="109" Column="79" TopLine="102"/>
+      </Position2>
+      <Position3>
+        <Filename Value="w_rgbtobn.pas"/>
+        <Caret Line="281" Column="3" TopLine="274"/>
+      </Position3>
+      <Position4>
+        <Filename Value="w_rgbtobn.pas"/>
+        <Caret Line="39" Column="7" TopLine="33"/>
+      </Position4>
+      <Position5>
+        <Filename Value="w_rgbtobn.pas"/>
+        <Caret Line="280" Column="29" TopLine="274"/>
+      </Position5>
+      <Position6>
+        <Filename Value="w_rgbtobn.pas"/>
+        <Caret Line="310" Column="19" TopLine="305"/>
+      </Position6>
+      <Position7>
+        <Filename Value="w_rgbtobn.pas"/>
+        <Caret Line="321" Column="82" TopLine="308"/>
+      </Position7>
+      <Position8>
+        <Filename Value="w_rgbtobn.pas"/>
+        <Caret Line="323" Column="50" TopLine="316"/>
+      </Position8>
+      <Position9>
+        <Filename Value="w_rgbtobn.pas"/>
+        <Caret Line="332" Column="10" TopLine="328"/>
+      </Position9>
+      <Position10>
+        <Filename Value="w_waves.pas"/>
+        <Caret Line="436" TopLine="431"/>
+      </Position10>
+      <Position11>
+        <Filename Value="w_waves.pas"/>
+        <Caret Line="840" Column="18" TopLine="835"/>
+      </Position11>
+      <Position12>
+        <Filename Value="w_masqueflou.pas"/>
+        <Caret Line="198" Column="27" TopLine="188"/>
+      </Position12>
+      <Position13>
+        <Filename Value="w_masqueflou.pas"/>
+        <Caret Line="314" TopLine="302"/>
+      </Position13>
+      <Position14>
+        <Filename Value="w_masqueflou.pas"/>
+        <Caret Line="315" TopLine="304"/>
+      </Position14>
+      <Position15>
+        <Filename Value="w_masqueflou.pas"/>
+        <Caret Line="316" TopLine="304"/>
+      </Position15>
+      <Position16>
+        <Filename Value="w_masqueflou.pas"/>
+        <Caret Line="317" TopLine="305"/>
+      </Position16>
+      <Position17>
+        <Filename Value="w_masqueflou.pas"/>
+        <Caret Line="318" TopLine="306"/>
+      </Position17>
+      <Position18>
+        <Filename Value="w_masqueflou.pas"/>
+        <Caret Line="314" TopLine="307"/>
+      </Position18>
+      <Position19>
+        <Filename Value="w_adddelcolorsignal.pas"/>
+        <Caret Line="548" TopLine="535"/>
+      </Position19>
+      <Position20>
+        <Filename Value="configuration.pas"/>
+        <Caret Line="979" Column="13"/>
+      </Position20>
+      <Position21>
+        <Filename Value="configuration.pas"/>
+        <Caret Line="980" Column="13" TopLine="955"/>
+      </Position21>
+      <Position22>
+        <Filename Value="configuration.pas"/>
+        <Caret Line="979" Column="13" TopLine="954"/>
+      </Position22>
+      <Position23>
+        <Filename Value="configuration.pas"/>
+        <Caret Line="980" Column="13" TopLine="955"/>
+      </Position23>
+      <Position24>
+        <Filename Value="configuration.pas"/>
+        <Caret Line="979" Column="13" TopLine="954"/>
+      </Position24>
+      <Position25>
+        <Filename Value="..\..\Graphics\memorypix.pas"/>
+        <Caret Line="2437" Column="37" TopLine="2096"/>
+      </Position25>
+      <Position26>
+        <Filename Value="..\..\Graphics\memorypix.pas"/>
+        <Caret Line="1460" Column="41" TopLine="1448"/>
+      </Position26>
+      <Position27>
+        <Filename Value="..\..\Graphics\memorypix.pas"/>
+        <Caret Line="270" Column="44" TopLine="260"/>
+      </Position27>
+      <Position28>
+        <Filename Value="..\..\Graphics\memorypix.pas"/>
+        <Caret Line="248" Column="36" TopLine="235"/>
+      </Position28>
+      <Position29>
+        <Filename Value="..\..\Graphics\memorypix.pas"/>
+        <Caret Line="233" TopLine="221"/>
+      </Position29>
+      <Position30>
+        <Filename Value="compilation.pas"/>
+        <Caret Line="23" Column="17" TopLine="5"/>
+      </Position30>
+    </JumpHistory>
+  </ProjectSession>
+</CONFIG>

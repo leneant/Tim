@@ -1,0 +1,6 @@
+_finalpix      : Taille max
+_lumprev       : Taille de la Preview
+Img            : pas de taille ??? Ligne 746 (Unit1) -> Max si pas de taille indiquée taille maximale.
+_calculatedPix : Taille max
+_focusdrawsrc  : Taille fenêtre de focus
+_focusdrawdst  : Taille fenêtre de focus
